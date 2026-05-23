@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>专业文章与实战案例 | Alan 律师团队</title>
+    <meta name="description" content="Alan涉外律师团队分享最新跨境法律合规案例、银行卡冻结申诉指南、日本与欧洲大宗资产投资法务风险控制分析。">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        :root {
+            --muji-bg: #F5F3ED;
+            --muji-text: #333333;
+            --muji-gray: #7F7F7F;
+            --muji-light: #EFECE4;
+            --muji-red: #7F1D1D;
+            --white: #FFFFFF;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { 
+            font-family: 'Noto Sans SC', sans-serif; 
+            background-color: var(--muji-bg); 
+            color: var(--muji-text); 
+            line-height: 1.7;
+        }
+        
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
+        
+        /* 導覽列 */
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 40px 0; border-bottom: 1px solid var(--muji-light); }
+        .logo { font-size: 20px; font-weight: 500; color: var(--muji-text); text-decoration: none; }
+        .nav-links a { color: var(--muji-gray); text-decoration: none; margin-left: 24px; font-size: 14px; transition: 0.2s; }
+        .nav-links a:hover, .nav-links a.active { color: var(--muji-red); }
+
+        /* 頁面標題 */
+        .page-header { padding: 60px 0 40px; text-align: center; }
+        .page-header h1 { font-size: 32px; font-weight: 500; margin-bottom: 10px; }
+        .page-header p { color: var(--muji-gray); font-size: 15px; font-weight: 300; }
+
+        /* 主佈局：左文章、右案例 */
+        .main-layout { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 60px; padding-bottom: 100px; }
+        .column-title { font-size: 20px; font-weight: 500; margin-bottom: 30px; padding-bottom: 10px; border-bottom: 2px solid var(--muji-text); display: inline-block; }
+
+        /* 文章清單樣式 */
+        .article-list { display: flex; flex-direction: column; gap: 40px; }
+        .article-item { text-decoration: none; color: inherit; display: block; }
+        .article-meta { font-size: 13px; color: var(--muji-gray); margin-bottom: 6px; font-weight: 300; }
+        .article-item h3 { font-size: 18px; font-weight: 500; margin-bottom: 8px; transition: 0.2s; }
+        .article-item:hover h3 { color: var(--muji-red); }
+        .article-item p { color: var(--muji-gray); font-size: 14px; text-align: justify; font-weight: 300; }
+
+        /* 案例清單樣式 */
+        .case-list { display: flex; flex-direction: column; gap: 30px; }
+        .case-item { background: var(--white); padding: 30px; border: 1px solid var(--muji-light); border-radius: 2px; }
+        .case-tag { display: inline-block; font-size: 12px; background: var(--muji-bg); color: var(--muji-red); padding: 2px 10px; margin-bottom: 12px; font-weight: 500; }
+        .case-item h3 { font-size: 17px; font-weight: 500; margin-bottom: 10px; }
+        .case-item p { color: var(--muji-gray); font-size: 14px; margin-bottom: 15px; text-align: justify; font-weight: 300; }
+        .case-img { width: 100%; border-radius: 2px; border: 1px solid var(--muji-light); margin-top: 10px; }
+
+        footer { text-align: center; padding: 60px 0; color: var(--muji-gray); font-size: 13px; font-weight: 300; border-top: 1px solid var(--muji-light); }
+
+        @media (max-width: 768px) {
+            .main-layout { grid-template-columns: 1fr; gap: 50px; }
+            nav { padding: 30px 0; flex-direction: column; gap: 15px; }
+            .nav-links { margin: 0; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <nav>
+        <a href="index.html" class="logo">Alan 律师团队</a>
+        <div class="nav-links">
+            <a href="index.html">首页</a>
+            <a href="index.html#services">业务范围</a>
+            <a href="insights.html" class="active">文章与案例</a>
+            <a href="index.html#contact">联系我们</a>
+        </div>
+    </nav>
+</div>
+
+<header class="container page-header">
+    <h1>专业洞察与实战案例</h1>
+    <p>提供前瞻性的跨境法律分析，分享團隊真實辦案成果</p>
+</header>
+
+<main class="container main-layout">
+    <section>
+        <h2 class="column-title">法律专栏文章</h2>
+        <div class="article-list">
+            <a href="https://www.xiaohongshu.com/user/profile/702834846" target="_blank" class="article-item">
+                <div class="article-meta">2026年5月 · 跨境风控</div>
+                <h3>外贸商户遭遇外币兑换账户冻结，第一步该怎么做？</h3>
+                <p>在涉外贸易與離岸交易中，因監管紅線觸發的帳戶凍結頻發。本文深度剖析境外資金流入內地卡的核心審查邏輯，並指導商戶如何留存合法的貿易憑證以應對突發風控...</p>
+            </a>
+
+            <a href="https://www.xiaohongshu.com/user/profile/702834846" target="_blank" class="article-item">
+                <div class="article-meta">2026年4月 · 海外投资</div>
+                <h3>收购买断日本温泉旅馆（Ryokan）的产权陷阱与《旅馆业法》特殊许可</h3>
+                <p>日本飯店投資熱度不減，但溫泉旅館的土地所有權、溫泉使用權（湯權）與產權調查極其複雜。團隊結合東京與京都實地項目，為高淨值投資人拆解必備的法務合規步驟...</p>
+            </a>
+
+            <a href="https://www.xiaohongshu.com/user/profile/702834846" target="_blank" class="article-item">
+                <div class="article-meta">2026年3月 · 资产保护</div>
+                <h3>解析多法域协同下的现实世界资产（RWA）代币化持有架構</h3>
+                <p>如何合法地將海外實體資產轉化為數位合規憑證？透過北美、歐盟與大中華區的雙邊稅務穿透分析，為家族辦公室設計高隱私、低稅負的資產保護長效藍圖...</p>
+            </a>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="column-title">实战成功案例</h2>
+        <div class="case-list">
+            <div class="case-item">
+                <div class="case-tag">协助解冻成功</div>
+                <h3>某涉外電商外貿卡凍結：14天內成功全額解凍</h3>
+                <p><strong>案件摘要：</strong> 客戶因涉外貿易資金往來，遭遇境內某地方公安局分局凍結賬戶，涉及資金高達數十萬元，嚴重影響企業資金周轉。</p>
+                <p><strong>處置結果：</strong> 團隊第一時間介入，依法提報完整的合法貿易鏈路論證公函。經與執法機關高效合規溝通，於14天內協助客戶無損解凍，全額恢復使用權。</p>
+                <img src="case1.png" alt="银行卡解冻官方公函凭证" class="case-img" onerror="this.style.display='none'">
+            </div>
+
+            <div class="case-item">
+                <div class="case-tag">跨境收購落地</div>
+                <h3>協助高淨值客戶完成日本京都精品民宿及產權架構設計</h3>
+                <p><strong>案件摘要：</strong> 客戶計劃全資收購位於日本京都的核心區物業並改建為高端度假民宿，涉及複雜的跨境資本流動與日本當地行業許可審查。</p>
+                <p><strong>處置結果：</strong> 協同日本在地合作律師，完成對標的土地產權與無權利瑕疵的盡職調查，成功協助客戶合法辦理境外投資備案，項目目前已順利運營。</p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <p>&copy; 2026 Alan 律师团队. All Rights Reserved. <br>专注跨境合规、全球资产投资与风险控制。基於 GitHub 靜態多頁面架構優化.</p>
+    </div>
+</footer>
+
+</body>
+</html>
