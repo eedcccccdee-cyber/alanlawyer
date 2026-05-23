@@ -5,11 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>Alan 律师 | 涉外律师 & 税务师 | 跨境合规与海外资产投资咨询</title>
-    <meta name="description" content="Alan律师团队专注涉外法律与税务双重合规。提供银行卡冻结协助解冻、跨境纠纷风险控制、日本酒店投资、法国酒庄收购及全球资产配置规划。多法域协同（北美、日本、欧盟、英国、东南亚、澳洲），为您护航全球权益。">
-    <meta name="keywords" content="Alan律师, 涉外律师, 税务师, 银行卡冻结, 冻结解冻, 跨境纠纷, 海外投资, 日本酒店投资, 法国酒庄收购, 跨境合规, 资产保护, 深圳涉外律师">
+    <meta name="description" content="Alan律师团队专注涉外法律与税务双重合规。提供银行卡冻结协助解冻、跨境纠纷风险控制、日本酒店投资、法国酒庄收购及全球资产配置规划。">
+    <meta name="keywords" content="Alan律师, 涉外律师, 税务师, 银行卡冻结, 跨境纠纷, 海外投资, 跨境合规, 资产保护">
     <meta name="author" content="Alan 律师">
-
-    <meta name="baidu-site-verification" content="BAIDU_VERIFICATION_CODE" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -38,11 +36,11 @@
         
         .container { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
         
-        /* 導覽列 */
+        /* 導覽列（包含分頁功能） */
         nav { display: flex; justify-content: space-between; align-items: center; padding: 40px 0; }
         .logo { font-size: 20px; font-weight: 500; color: var(--muji-text); letter-spacing: 0.5px; }
         .nav-links a { color: var(--muji-gray); text-decoration: none; margin-left: 24px; font-size: 14px; transition: 0.2s; }
-        .nav-links a:hover, .nav-links a.active { color: var(--muji-red); }
+        .nav-links a:hover, .nav-links a.active { color: var(--muji-red); font-weight: 500; }
 
         /* 首屏區塊 */
         .hero { padding: 60px 0 100px; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 60px; align-items: center; }
@@ -74,13 +72,19 @@
         .feature-list li strong { color: var(--muji-text); display: block; font-size: 17px; font-weight: 500; margin-bottom: 6px; }
         .feature-list p { font-size: 14px; color: var(--muji-gray); font-weight: 300; }
 
+        /* 全新：關於律師簡介區 */
+        .about-section { padding: 90px 0; background: var(--white); border-top: 1px solid var(--muji-light); }
+        .about-column { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 60px; align-items: center; }
+        .about-text h3 { font-size: 22px; font-weight: 500; margin-bottom: 15px; color: var(--muji-text); }
+        .about-text p { color: var(--muji-gray); font-size: 15px; margin-bottom: 20px; text-align: justify; font-weight: 300; }
+
         /* 聯絡區塊 */
-        .contact { padding: 100px 0; background: var(--white); text-align: center; border-top: 1px solid var(--muji-light); }
+        .contact { padding: 100px 0; text-align: center; border-top: 1px solid var(--muji-light); }
         .contact p { max-width: 650px; margin: 0 auto 40px; color: var(--muji-gray); font-size: 15px; font-weight: 300; }
         
         .xhs-box { 
             display: block; 
-            background: var(--muji-bg); 
+            background: var(--white); 
             border: 1px solid var(--muji-light); 
             max-width: 450px; 
             margin: 0 auto; 
@@ -88,17 +92,18 @@
             border-radius: 4px; 
             text-decoration: none; 
             transition: 0.2s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.01);
         }
-        .xhs-box:hover { background-color: #EFECE4; transform: translateY(-2px); }
+        .xhs-box:hover { background-color: var(--white); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.03); }
         .xhs-icon { font-size: 36px; color: #ff2442; margin-bottom: 15px; }
         .xhs-box h4 { font-size: 18px; color: var(--muji-text); margin-bottom: 6px; font-weight: 500; }
         .xhs-box p { font-size: 14px; color: var(--muji-gray); margin-bottom: 15px; }
         .xhs-btn-text { font-size: 14px; color: var(--muji-red); font-weight: 500; }
 
-        footer { text-align: center; padding: 60px 0; color: var(--muji-gray); font-size: 13px; font-weight: 300; background-color: var(--muji-bg); }
+        footer { text-align: center; padding: 60px 0; color: var(--muji-gray); font-size: 13px; font-weight: 300; background-color: var(--muji-bg); border-top: 1px solid var(--muji-light); }
         
         @media (max-width: 768px) {
-            .hero, .two-column { grid-template-columns: 1fr; text-align: center; }
+            .hero, .two-column, .about-column { grid-template-columns: 1fr; text-align: center; }
             .badge-group { justify-content: center; }
             .hero-img { max-width: 300px; margin: 0 auto; }
             nav { padding: 30px 0; flex-direction: column; gap: 15px; }
@@ -114,8 +119,7 @@
         <div class="nav-links">
             <a href="index.html" class="active">首页</a>
             <a href="#services">业务范围</a>
-            <a href="insights.html">文章与案例</a>
-            <a href="#contact">联系我们</a>
+            <a href="insights.html">文章与案例</a> <a href="#contact">联系我们</a>
         </div>
     </nav>
 </div>
@@ -132,7 +136,7 @@
         <a href="#contact" class="cta-btn">前往小红书咨询</a>
     </div>
     <div>
-        <img src="alan.png" alt="Alan 律师商务形象" class="hero-img">
+        <img src="alan_portrait.png" alt="Alan 律师商务形象" class="hero-img">
     </div>
 </section>
 
@@ -148,7 +152,7 @@
             <div class="card">
                 <i class="fa-solid fa-hotel"></i>
                 <h3>日本酒店投资咨询</h3>
-                <p>全面覆盖东京、大阪都市商旅酒店，以及京都、箱根高端温泉旅馆（Ryokan）的并购。提供土地尽调、日本旅馆业法合规审查及是在架构设计。</p>
+                <p>全面覆盖东京、大阪都市商旅酒店，以及京都、箱根高端温泉旅馆（Ryokan）的并购。提供土地尽调、日本旅馆业法合规审查及架构设计。</p>
             </div>
             <div class="card">
                 <i class="fa-solid fa-wine-glass"></i>
@@ -158,7 +162,7 @@
             <div class="card">
                 <i class="fa-solid fa-money-bill-trend-up"></i>
                 <h3>税务筹划与资产保护</h3>
-                <p>兼具律师与税务师双重视角，进行跨国公司架构、离岸信托、家族办公室与 RWA（真实世界资产）代币化合规路径规划，优化全球税负。</p>
+                <p>兼具律师与税务师双重视角，进行跨国公司架构、离岸信托、家族办公室与 RWA 代币化合规路径规划，优化全球税负。</p>
             </div>
         </div>
     </div>
@@ -168,7 +172,7 @@
     <h2 class="section-title">核心风控优势</h2>
     <div class="two-column">
         <div>
-            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=600&q=80" alt="专业风控团队" class="hero-img">
+            <img src="alan_speaking.png" alt="Alan 律师论坛演讲" class="hero-img">
         </div>
         <div>
             <ul class="feature-list">
@@ -198,10 +202,24 @@
     </div>
 </section>
 
+<section class="about-section">
+    <div class="container about-column">
+        <div class="about-text">
+            <h2 style="text-align: left; margin-bottom: 40px;">关于 Alan 律师团队</h2>
+            <h3>致力于为全球华人资产重塑合规路径</h3>
+            <p>我们立足于粤港澳大灣區核心城市深圳，長期深耕跨境商事法律與國際稅務規劃。團隊不僅具備深厚的境內外法學背景，更擁有跨國稅務師專業資歷，擅長穿透複雜的跨國法律迷霧，為企業出海與高淨值群體提供切實可行的結構化解決方案。</p>
+            <p>無論是突發的帳戶風控、重大跨境爭議解決，還是全球精品的資產架構佈局，我們始終堅持理性、嚴謹、克制的專業操守，做您全球化戰略中最堅實的法律後盾。</p>
+        </div>
+        <div>
+            <img src="alan_fullbody.png" alt="Alan 律师全身形象" class="hero-img">
+        </div>
+    </div>
+</section>
+
 <section id="contact" class="contact">
     <div class="container">
         <h2 class="section-title">开启您的全球战略规划</h2>
-        <p>不论是面临紧急的跨境账户纠纷、银行卡冻结，还是正在筹备日本饭店与欧洲酒庄ের海外投资，欢迎通过我们官方小红书渠道直接取得联系与私信咨询。</p>
+        <p>不论是面临紧急的跨境账户纠纷、银行卡冻结，还是正在筹备日本饭店与欧洲酒庄的海外投资，欢迎通过我们官方小红书渠道直接取得联系与私信咨询。</p>
         
         <a href="https://www.xiaohongshu.com/user/profile/702834846" target="_blank" class="xhs-box">
             <div class="xhs-icon"><i class="fa-solid fa-book-open"></i></div>
