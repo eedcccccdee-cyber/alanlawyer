@@ -4,8 +4,8 @@
 */
 const siteContent = {
   contacts: {
-    telegram: "",
-    line: ""
+    telegram: "https://t.me/kklovelife",
+    line: "https://line.me/ti/p/6rN5nAxGsZ"
   },
   articles: [
     { category: "矿业寻源 · 并购收购", title: "长期寻源：合规在产金属矿项目", excerpt: "受头部省属能源矿业平台委托，长期寻求国内外优质铜、金、铅锌等金属矿项目；买方资金充裕、收购节奏稳定，重视专业、保密与高效沟通。", url: "mining-sourcing.html" },
