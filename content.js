@@ -3,8 +3,12 @@
   图片请放在网站资料夹内，并在 image 中填写档名，例如："new-case.jpeg"。
 */
 const siteContent = {
+  contacts: {
+    telegram: "",
+    line: ""
+  },
   articles: [
-    { category: "矿业寻源 · 并购收购", title: "长期寻源：合规在产金属矿项目", excerpt: "受头部省属能源矿业平台委托，长期寻求国内外优质铜、金、铅锌等金属矿项目；买方资金充裕、收购节奏稳定，重视专业、保密与高效沟通。", url: "#mining-sourcing" },
+    { category: "矿业寻源 · 并购收购", title: "长期寻源：合规在产金属矿项目", excerpt: "受头部省属能源矿业平台委托，长期寻求国内外优质铜、金、铅锌等金属矿项目；买方资金充裕、收购节奏稳定，重视专业、保密与高效沟通。", url: "mining-sourcing.html" },
     { category: "CROSS-BORDER COMPLIANCE", title: "跨境交易中，尽职调查真正应该关注什么？", excerpt: "跨境交易的风险往往并不只在文件本身，而在于交易背景、主体与后续履行能否形成完整闭环。", url: "https://xhslink.com/m/7AVJsZKQfc1" },
     { category: "OVERSEAS INVESTMENT", title: "海外资产配置：从购买到长期持有的法律视角", excerpt: "产权、运营限制、税务义务与退出机制，都会影响一项资产能否成为真正长期的配置。", url: "https://xhslink.com/m/7AVJsZKQfc1" },
     { category: "LEGAL PRACTICE", title: "面对复杂争议，如何建立有效的应对节奏", excerpt: "好的法律服务不仅在于判断，也在于让当事人能在时间、证据与沟通之间采取行动。", url: "https://xhslink.com/m/7AVJsZKQfc1" }
@@ -14,3 +18,28 @@ const siteContent = {
     { category: "海外投资", title: "海外酒店及不动产投资的合规安排", excerpt: "从前期审查到交易落地，构建可被长期执行的投资框架。", image: "case1.jpeg" }
   ]
 };
+
+// Contact buttons are enabled automatically once the Telegram and LINE links above are filled in.
+(() => {
+  const style = document.createElement("style");
+  style.textContent = ".global-contact{position:fixed;right:22px;bottom:22px;z-index:20;display:flex;flex-direction:column;gap:9px;font:600 12px 'Plus Jakarta Sans',sans-serif;letter-spacing:.04em}.global-contact a,.global-contact span,.contact-actions a,.contact-actions span{min-width:142px;padding:12px 16px;color:#fff;text-decoration:none;background:#12231f;border:1px solid #b8955a;box-shadow:0 8px 22px rgba(18,35,31,.18);transition:.2s}.global-contact a:hover,.contact-actions a:hover{transform:translateY(-2px);background:#1d3b33}.global-contact span,.contact-actions span{display:block;color:#d5c9b4;cursor:default}.global-contact b,.contact-actions b{display:inline-block;min-width:29px;color:#d5b576}.contact-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}.contact-actions a,.contact-actions span{display:inline-block;font:600 13px 'Plus Jakarta Sans',sans-serif;letter-spacing:.04em}@media(max-width:700px){.global-contact{right:13px;bottom:13px}.global-contact a,.global-contact span{min-width:126px;padding:10px 12px}}";
+  document.head.appendChild(style);
+  const contact = document.createElement("div");
+  contact.className = "global-contact";
+  const link = (name, value, mark) => value
+    ? `<a href="${value}" target="_blank" rel="noopener"><b>${mark}</b>${name}</a>`
+    : `<span><b>${mark}</b>${name}</span>`;
+  contact.innerHTML = link("Telegram", siteContent.contacts.telegram, "TG") + link("LINE", siteContent.contacts.line, "LN");
+  document.body.appendChild(contact);
+  const languages = document.createElement("nav");
+  languages.className = "language-switcher";
+  languages.innerHTML = '<a class="active" href="index.html">中文</a><a href="en/index.html">EN</a><a href="ja/index.html">日本語</a>';
+  const languageStyle = document.createElement("style");
+  languageStyle.textContent = ".language-switcher{position:fixed;left:22px;bottom:22px;z-index:20;display:flex;background:#12231f;border:1px solid #b8955a;font:600 11px 'Plus Jakarta Sans',sans-serif}.language-switcher a{padding:9px 11px;color:#d8ddd8;text-decoration:none;border-left:1px solid #50635b}.language-switcher a:first-child{border-left:0}.language-switcher a.active,.language-switcher a:hover{background:#b8955a;color:#12231f}@media(max-width:700px){.language-switcher{left:13px;bottom:13px}.language-switcher a{padding:8px 9px}}";
+  document.head.appendChild(languageStyle);
+  document.body.appendChild(languages);
+  const actionButtons = `<div class="contact-actions">${link("Telegram", siteContent.contacts.telegram, "TG")}${link("LINE", siteContent.contacts.line, "LN")}</div>`;
+  document.querySelectorAll(".contact a[href*='xhslink'], main .cta[href*='xhslink']").forEach((button) => { button.outerHTML = actionButtons; });
+  const contactCopy = document.querySelector(".contact p");
+  if (contactCopy) contactCopy.textContent = "如您正面对跨境法律、税务、海外投资或矿业项目问题，欢迎通过 LINE 或 Telegram 与 Alan 律师联系。";
+})();
