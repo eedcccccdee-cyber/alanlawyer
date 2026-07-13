@@ -22,4 +22,13 @@
   }
   const footer = document.querySelector(".footer .wrap");
   if (footer) footer.insertAdjacentHTML("beforeend", '<div style="margin-top:12px"><a href="index.html" style="color:#d8b97c;text-decoration:none">Back to top / ホームへ ↑</a></div>');
+  const contactStyle = document.createElement("style");
+  contactStyle.textContent = ".locale-contacts{position:fixed;right:22px;bottom:22px;z-index:20;display:flex;flex-direction:column;gap:9px;font:600 12px 'Plus Jakarta Sans',sans-serif;letter-spacing:.04em}.locale-contacts a{min-width:142px;padding:12px 16px;color:#fff;text-decoration:none;background:#12231f;border:1px solid #b8955a;box-shadow:0 8px 22px rgba(18,35,31,.18);transition:.2s}.locale-contacts a:hover{transform:translateY(-2px);background:#1d3b33}.locale-contacts b{display:inline-block;min-width:29px;color:#d5b576}@media(max-width:700px){.locale-contacts{right:13px;bottom:13px}.locale-contacts a{min-width:126px;padding:10px 12px}}";
+  document.head.appendChild(contactStyle);
+  const contacts = document.createElement("div");
+  contacts.className = "locale-contacts";
+  contacts.innerHTML = '<a href="https://t.me/kklovelife" target="_blank" rel="noopener"><b>TG</b>Telegram</a><a href="https://line.me/ti/p/6rN5nAxGsZ" target="_blank" rel="noopener"><b>LN</b>LINE</a>';
+  document.body.appendChild(contacts);
+  const contactCopy = document.querySelector(".contact p");
+  if (contactCopy) contactCopy.textContent = document.documentElement.lang === "ja" ? "LINE または Telegram よりお問い合わせください。" : "Please contact Alan via LINE or Telegram.";
 })();
