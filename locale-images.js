@@ -20,4 +20,6 @@
     image.alt = "Mining acquisition sourcing";
     mining.appendChild(image);
   }
+  const footer = document.querySelector(".footer .wrap");
+  if (footer) footer.insertAdjacentHTML("beforeend", '<div style="margin-top:12px"><a href="index.html" style="color:#d8b97c;text-decoration:none">Back to top / ホームへ ↑</a></div>');
 })();

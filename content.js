@@ -38,6 +38,11 @@ const siteContent = {
   languageStyle.textContent = ".language-switcher{position:fixed;left:22px;bottom:22px;z-index:20;display:flex;background:#12231f;border:1px solid #b8955a;font:600 11px 'Plus Jakarta Sans',sans-serif}.language-switcher a{padding:9px 11px;color:#d8ddd8;text-decoration:none;border-left:1px solid #50635b}.language-switcher a:first-child{border-left:0}.language-switcher a.active,.language-switcher a:hover{background:#b8955a;color:#12231f}@media(max-width:700px){.language-switcher{left:13px;bottom:13px}.language-switcher a{padding:8px 9px}}";
   document.head.appendChild(languageStyle);
   document.body.appendChild(languages);
+  const responsiveStyle = document.createElement("style");
+  responsiveStyle.textContent = ".footer-links{margin-top:14px;display:flex;justify-content:center;gap:16px;flex-wrap:wrap}.footer-links a{color:#d8b97c;text-decoration:none;font:500 11px 'Plus Jakarta Sans',sans-serif;letter-spacing:.05em}@media(max-width:760px){.hero-grid{min-height:0!important;gap:32px!important;padding:42px 0 48px!important}.hero h1{font-size:45px!important;line-height:1.27!important;margin:15px 0 20px!important}.hero p{font-size:15px!important;line-height:1.8!important;margin-bottom:25px!important}.hero-image{height:390px!important}.links{gap:10px!important}.links a:nth-child(3){display:inline!important}.links a{margin-left:0!important;font-size:11px!important}.nav-contact{padding:8px 9px!important}.footer-links{gap:12px}.footer-links a{font-size:10px}}";
+  document.head.appendChild(responsiveStyle);
+  const footerWrap = document.querySelector(".footer .wrap");
+  if (footerWrap) footerWrap.insertAdjacentHTML("beforeend", '<nav class="footer-links"><a href="index.html">首页</a><a href="insights.html">洞察</a><a href="mining-sourcing.html">矿业寻源</a><a href="#top" onclick="window.scrollTo({top:0,behavior:\'smooth\'});return false">回到顶部 ↑</a></nav>');
   const actionButtons = `<div class="contact-actions">${link("Telegram", siteContent.contacts.telegram, "TG")}${link("LINE", siteContent.contacts.line, "LN")}</div>`;
   document.querySelectorAll(".contact a[href*='xhslink'], main .cta[href*='xhslink']").forEach((button) => { button.outerHTML = actionButtons; });
   const contactCopy = document.querySelector(".contact p");
