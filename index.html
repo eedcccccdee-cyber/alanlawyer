@@ -1,257 +1,29 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-    
+<!doctype html>
+<html lang="zh-Hans">
 <head>
-    <meta name="google-site-verification" content="YDdSXQcx2UW-fXICJ3lHs-iMYO2Wft2-fUDuGcbvZnc" />
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Alan 律师 | 涉外律师 & 税务师 | 跨境合规与海外资产投资咨询</title>
-    <meta name="description" content="Alan律师团队专注涉外法律与税务双重合规。提供银行卡冻结协助解冻、跨境纠纷风险控制、日本酒店投资、法国酒庄收购及全球资产配置规划。">
-    <meta name="keywords" content="Alan律师, 涉外律师, 税务师, 银行卡冻结, 跨境纠纷, 海外投资, 跨境合规, 资产保护">
-    <meta name="author" content="Alan 律师">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-    <style>
-        /* MUJI 無印良品風核心色彩架構 */
-        :root {
-            --muji-bg: #F5F3ED;       /* 溫暖再生紙米白 */
-            --muji-text: #333333;     /* 深碳灰 */
-            --muji-gray: #7F7F7F;     /* 說明文字灰 */
-            --muji-light: #EFECE4;    /* 區塊微弱分隔色 */
-            --muji-red: #7F1D1D;      /* 無印經典暗紅 */
-            --white: #FFFFFF;
-        }
-
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { 
-            font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif; 
-            background-color: var(--muji-bg); 
-            color: var(--muji-text); 
-            line-height: 1.7;
-            -webkit-font-smoothing: antialiased;
-        }
-        
-        .container { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
-        
-        /* 導覽列 */
-        nav { display: flex; justify-content: space-between; align-items: center; padding: 40px 0; }
-        .logo { font-size: 20px; font-weight: 500; color: var(--muji-text); letter-spacing: 0.5px; }
-        .nav-links a { color: var(--muji-gray); text-decoration: none; margin-left: 24px; font-size: 14px; transition: 0.2s; }
-        .nav-links a:hover, .nav-links a.active { color: var(--muji-red); font-weight: 500; }
-
-        /* 首屏區塊 */
-        .hero { padding: 60px 0 100px; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 60px; align-items: center; }
-        .hero-text h1 { font-size: 38px; font-weight: 500; line-height: 1.3; margin-bottom: 24px; color: var(--muji-text); }
-        .hero-text h1 span { color: var(--muji-red); font-weight: 700; }
-        .hero-text p { font-size: 16px; color: var(--muji-gray); margin-bottom: 35px; text-align: justify; font-weight: 300; }
-        .badge-group { display: flex; gap: 10px; margin-bottom: 24px; flex-wrap: wrap; }
-        .badge { background: var(--white); border: 1px solid var(--muji-light); color: var(--muji-text); padding: 5px 14px; border-radius: 2px; font-size: 13px; font-weight: 400; }
-        .badge i { margin-right: 6px; color: var(--muji-gray); }
-        .cta-btn { display: inline-block; background-color: var(--muji-red); color: var(--white); padding: 14px 40px; border-radius: 2px; font-weight: 500; text-decoration: none; font-size: 15px; letter-spacing: 1px; transition: 0.2s; }
-        .cta-btn:hover { background-color: #5A1414; }
-        .hero-img { width: 100%; border-radius: 2px; border: 1px solid var(--muji-light); box-shadow: 0 4px 20px rgba(0,0,0,0.02); }
-
-        /* 核心業務 */
-        .services { padding: 90px 0; background: var(--white); border-top: 1px solid var(--muji-light); border-bottom: 1px solid var(--muji-light); }
-        .section-title { text-align: center; font-size: 26px; font-weight: 500; margin-bottom: 60px; letter-spacing: 1px; }
-        .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px; }
-        .card { padding: 10px 5px; }
-        .card i { font-size: 28px; color: var(--muji-red); margin-bottom: 20px; display: block; }
-        .card h3 { font-size: 18px; font-weight: 500; margin-bottom: 14px; padding-bottom: 10px; border-bottom: 1px solid var(--muji-light); }
-        .card p { color: var(--muji-gray); font-size: 14px; text-align: justify; font-weight: 300; }
-
-        /* 團隊優勢 */
-        .features { padding: 100px 0; }
-        .two-column { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 60px; align-items: center; }
-        .feature-list { list-style: none; }
-        .feature-list li { margin-bottom: 35px; display: flex; align-items: flex-start; }
-        .feature-list li i { color: var(--muji-red); font-size: 16px; margin-right: 20px; margin-top: 6px; }
-        .feature-list li strong { color: var(--muji-text); display: block; font-size: 17px; font-weight: 500; margin-bottom: 6px; }
-        .feature-list p { font-size: 14px; color: var(--muji-gray); font-weight: 300; }
-
-        /* 關於律師簡介區 */
-        .about-section { padding: 90px 0; background: var(--white); border-top: 1px solid var(--muji-light); }
-        .about-column { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 60px; align-items: center; }
-        .about-text h3 { font-size: 22px; font-weight: 500; margin-bottom: 15px; color: var(--muji-text); }
-        .about-text p { color: var(--muji-gray); font-size: 15px; margin-bottom: 20px; text-align: justify; font-weight: 300; }
-
-        /* 聯絡區塊 */
-        .contact { padding: 100px 0; text-align: center; border-top: 1px solid var(--muji-light); }
-        .contact p { max-width: 650px; margin: 0 auto 40px; color: var(--muji-gray); font-size: 15px; font-weight: 300; }
-        
-        .xhs-box { 
-            display: block; 
-            background: var(--white); 
-            border: 1px solid var(--muji-light); 
-            max-width: 450px; 
-            margin: 0 auto; 
-            padding: 30px; 
-            border-radius: 4px; 
-            text-decoration: none; 
-            transition: 0.2s;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.01);
-        }
-        .xhs-box:hover { background-color: var(--white); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.03); }
-        .xhs-icon { font-size: 36px; color: #ff2442; margin-bottom: 15px; }
-        .xhs-box h4 { font-size: 18px; color: var(--muji-text); margin-bottom: 6px; font-weight: 500; }
-        .xhs-box p { font-size: 14px; color: var(--muji-gray); margin-bottom: 15px; }
-        .xhs-btn-text { font-size: 14px; color: var(--muji-red); font-weight: 500; }
-
-        footer { text-align: center; padding: 60px 0; color: var(--muji-gray); font-size: 13px; font-weight: 300; background-color: var(--muji-bg); border-top: 1px solid var(--muji-light); }
-        
-        @media (max-width: 768px) {
-            .hero, .two-column, .about-column { grid-template-columns: 1fr; text-align: center; }
-            .badge-group { justify-content: center; }
-            .hero-img { max-width: 300px; margin: 0 auto; }
-            nav { padding: 30px 0; flex-direction: column; gap: 15px; }
-            .nav-links { margin: 0; }
-        }
-    </style>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-H7D7JWKK4V"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-H7D7JWKK4V');
-</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="YDdSXQcx2UW-fXICJ3lHs-iMYO2Wft2-fUDuGcbvZnc">
+  <meta name="description" content="Alan律师团队提供涉外法律、税务合规与海外资产投资咨询服务。">
+  <title>Alan 律师｜跨境法律与税务顾问</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Noto+Serif+SC:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root{--ink:#12231f;--forest:#18352f;--gold:#b8955a;--cream:#f5f1e8;--paper:#fffdfa;--mist:#e3ddd1;--text:#27332f;--muted:#69736e}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--text);font-family:"Noto Serif SC",serif;line-height:1.8}a{color:inherit}.wrap{max-width:1240px;margin:auto;padding:0 42px}.eyebrow{font:600 11px "Plus Jakarta Sans",sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}.top{background:var(--ink);color:#fff}.nav{height:92px;display:flex;justify-content:space-between;align-items:center}.brand{font-size:19px;letter-spacing:.08em;text-decoration:none}.brand small{font:500 10px "Plus Jakarta Sans",sans-serif;display:block;color:#d0c1a5;letter-spacing:.19em;margin-top:-4px}.links{display:flex;gap:30px;align-items:center;font:500 13px "Plus Jakarta Sans",sans-serif;letter-spacing:.06em}.links a{text-decoration:none;color:#e8e4da}.links a:hover{color:#d9b77d}.nav-contact{border:1px solid #9f8559;padding:10px 16px}.hero{background:var(--ink);color:white;overflow:hidden}.hero-grid{min-height:660px;display:grid;grid-template-columns:1.02fr .98fr;align-items:center;gap:72px}.hero h1{font-size:clamp(42px,5vw,70px);line-height:1.25;font-weight:500;margin:19px 0 27px;letter-spacing:.03em}.hero h1 em{font-family:"DM Serif Display",serif;font-weight:400;color:#d7b777}.hero p{max-width:530px;color:#d3dbd5;font-size:16px;margin:0 0 34px}.button{display:inline-flex;align-items:center;gap:28px;padding:15px 18px 15px 23px;background:#c2a06a;color:#14271f;text-decoration:none;font:600 13px "Plus Jakarta Sans",sans-serif;letter-spacing:.08em}.button b{font-size:20px;font-weight:400;line-height:0}.hero-image{height:535px;position:relative;background:#0e201b}.hero-image:before{content:"";position:absolute;inset:22px -15px -15px 22px;border:1px solid #927a4f}.hero-image img{width:100%;height:100%;object-fit:contain;object-position:center;position:relative;filter:saturate(.82)}.focus{background:#e9e2d5;padding:26px 0}.focus-grid{display:grid;grid-template-columns:repeat(3,1fr)}.focus-grid div{padding:7px 35px;border-left:1px solid #cfc5b5}.focus-grid div:first-child{border:0;padding-left:0}.focus-grid strong{display:block;font-size:16px;font-weight:600}.focus-grid span{font-size:13px;color:var(--muted)}section{padding:112px 0}.heading{max-width:690px;margin-bottom:55px}.heading h2{font-size:clamp(30px,3.5vw,47px);line-height:1.4;font-weight:500;margin:12px 0 0}.services{background:var(--paper)}.service-list{border-top:1px solid var(--mist)}.service{display:grid;grid-template-columns:72px 1fr 1.3fr;gap:26px;padding:35px 0;border-bottom:1px solid var(--mist);align-items:start}.service-no{font:500 13px "Plus Jakarta Sans",sans-serif;color:var(--gold);padding-top:9px}.service h3{margin:0;font-size:22px;font-weight:600}.service p{margin:3px 0 0;color:var(--muted);font-size:15px}.profile{background:var(--forest);color:#fff}.profile-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:95px;align-items:center}.portrait{position:relative;background:#102821}.portrait:after{content:"ALAN LAW";position:absolute;bottom:-34px;right:-21px;color:#c39f66;font:400 42px "DM Serif Display",serif;letter-spacing:.1em}.portrait img{width:100%;height:590px;object-fit:contain;object-position:center;filter:saturate(.75)}.profile .eyebrow{color:#d5b576}.profile h2{font-size:42px;line-height:1.5;font-weight:500;margin:13px 0 24px}.profile p{color:#d2dcd6;font-size:15px;margin-bottom:16px}.credentials{display:grid;grid-template-columns:1fr 1fr;margin-top:32px;border-top:1px solid #537067}.credentials div{padding:16px 14px 0 0;color:#cbd5ce;font-size:14px}.credentials strong{display:block;color:#d8b97c;font:500 12px "Plus Jakarta Sans",sans-serif;letter-spacing:.12em;margin-bottom:4px}.approach{background:var(--cream)}.approach-grid{display:grid;grid-template-columns:1fr 1fr;gap:75px;align-items:center}.approach img{width:100%;height:500px;object-fit:contain;background:#e6dfd1;filter:saturate(.8)}.principles{list-style:none;margin:28px 0 0;padding:0;counter-reset:item}.principles li{border-top:1px solid #d8d0c2;padding:20px 0 19px 52px;position:relative}.principles li:before{counter-increment:item;content:"0" counter(item);position:absolute;left:0;top:23px;color:var(--gold);font:500 12px "Plus Jakarta Sans",sans-serif}.principles strong{font-size:18px;display:block}.principles span{font-size:14px;color:var(--muted)}.insight{background:var(--paper)}.articles{display:grid;grid-template-columns:1.35fr 1fr 1fr;gap:25px}.article{padding:28px;border:1px solid var(--mist);min-height:225px;text-decoration:none;display:flex;flex-direction:column;justify-content:space-between;transition:.25s}.article:hover{background:var(--ink);color:#fff;transform:translateY(-4px)}.article small{font:500 11px "Plus Jakarta Sans",sans-serif;color:var(--gold);letter-spacing:.1em}.article h3{font-size:20px;line-height:1.55;font-weight:500;margin:24px 0}.article span{font:500 13px "Plus Jakarta Sans",sans-serif;letter-spacing:.08em}.contact{background:#c2a06a;padding:94px 0;text-align:center}.contact h2{font-size:clamp(32px,4vw,50px);font-weight:500;line-height:1.45;margin:12px 0}.contact p{max-width:550px;margin:0 auto 30px;font-size:15px}.contact .button{background:var(--ink);color:#fff}.footer{background:var(--ink);color:#bdc8c0;padding:35px 0;font:400 12px "Plus Jakarta Sans",sans-serif}.footer .wrap{display:flex;justify-content:space-between;gap:20px}.footer a{text-decoration:none}@media(max-width:760px){.wrap{padding:0 22px}.nav{height:75px}.links{gap:13px;font-size:11px}.links a:nth-child(2),.links a:nth-child(3){display:none}.nav-contact{padding:8px}.hero-grid,.profile-grid,.approach-grid{grid-template-columns:1fr;gap:45px}.hero-grid{padding:60px 0}.hero-image{height:420px}.focus-grid{grid-template-columns:1fr}.focus-grid div,.focus-grid div:first-child{border:0;border-top:1px solid #cfc5b5;padding:11px 0}.service{grid-template-columns:42px 1fr;gap:12px}.service p{grid-column:2}.portrait img{height:470px}section{padding:72px 0}.articles{grid-template-columns:1fr}.footer .wrap{display:block}.footer p{margin:8px 0}}
+  </style>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-H7D7JWKK4V"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-H7D7JWKK4V')</script>
 </head>
 <body>
-
-<div class="container">
-    <nav>
-        <div class="logo">Alan 律师团队</div>
-        <div class="nav-links">
-            <a href="index.html" class="active">首页</a>
-            <a href="#services">业务范围</a>
-            <a href="insights.html">文章与案例</a>
-            <a href="#contact">联系我们</a>
-        </div>
-    </nav>
-</div>
-
-<section class="container hero">
-    <div class="hero-text">
-        <div class="badge-group">
-            <span class="badge"><i class="fa-solid fa-scale-balanced"></i> 涉外律师</span>
-            <span class="badge"><i class="fa-solid fa-calculator"></i> 税务师</span>
-            <span class="badge"><i class="fa-solid fa-shield-halved"></i> 跨境风控</span>
-        </div>
-        <h1>涉外法律与海外投资的<br><span>结构化合规方案</span></h1>
-        <p>我们专注于跨境合规治理、重大商事争议解决、跨国实体设立及全球精品资产投资。通过理性的多法域高效协同，为您在全球市场中梳理合规路径，规避核心风险。</p>
-        <a href="#contact" class="cta-btn">前往小红书咨询</a>
-    </div>
-    <div>
-        <img src="alan_portrait.jpeg" alt="Alan 律师商务形象" class="hero-img">
-    </div>
-</section>
-
-<section id="services" class="services">
-    <div class="container">
-        <h2 class="section-title">核心业务范围</h2>
-        <div class="grid-4">
-            <div class="card">
-                <i class="fa-solid fa-credit-card"></i>
-                <h3>跨境纠纷与卡解冻</h3>
-                <p>专为涉外电商、跨境贸易及离岸账户遭遇的银行卡冻结提供紧急法务协助。通过全套合规性论证与合规申诉，协助重获资金控制权。</p>
-            </div>
-            <div class="card">
-                <i class="fa-solid fa-hotel"></i>
-                <h3>日本酒店投资咨询</h3>
-                <p>全面覆盖东京、大阪都市商旅酒店，以及京都、箱根高端温泉旅馆（Ryokan）的并购。提供土地尽调、日本旅馆业法合规审查及架构设计。</p>
-            </div>
-            <div class="card">
-                <i class="fa-solid fa-wine-glass"></i>
-                <h3>欧洲精品资产收购</h3>
-                <p>专注于法国波尔多与勃根地优质酒庄、阿尔卑斯高端滑雪渡假饭店的跨境并购交易。涵盖法规适配、SAFER优先购权应对及资产流转。</p>
-            </div>
-            <div class="card">
-                <i class="fa-solid fa-money-bill-trend-up"></i>
-                <h3>税务筹划与资产保护</h3>
-                <p>兼具律师与税务师双重视角，进行跨国公司架构、离岸信托、家族办公室与 RWA 代币化合规路径规划，优化全球税负。</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="cases" class="container features">
-    <h2 class="section-title">核心风控优势</h2>
-    <div class="two-column">
-        <div>
-            <img src="alan_speaking.jpeg" alt="Alan 律师论坛演讲" class="hero-img">
-        </div>
-        <div>
-            <ul class="feature-list">
-                <li>
-                    <i class="fa-solid fa-minus"></i>
-                    <div>
-                        <strong>多法域高效协同</strong>
-                        <p>紧密联合北美、日本、欧盟、英国、东南亚、澳洲等全球多法域专业合伙人律师，跨越地缘与时差，提供一站式落地服务。</p>
-                    </div>
-                </li>
-                <li>
-                    <i class="fa-solid fa-minus"></i>
-                    <div>
-                        <strong>实战成果验证（如成功解冻）</strong>
-                        <p>深谙境内外监管红线与司法执纪流程。拥有大量协助客户成功处理重大涉外争议、刑事风险控制及银行卡解冻的真实实绩。</p>
-                    </div>
-                </li>
-                <li>
-                    <i class="fa-solid fa-minus"></i>
-                    <div>
-                        <strong>法律与税务双重穿透分析</strong>
-                        <p>兼具律师与税务师双重专业资格，从架构设计初期便带入税务穿透模型，彻底防范跨国资产被重复课税或合规暴雷的潜在风险。</p>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </div>
-</section>
-
-<section class="about-section">
-    <div class="container about-column">
-        <div class="about-text">
-            <h2 style="text-align: left; margin-bottom: 40px;">关于 Alan 律师团队</h2>
-            <h3>致力于为全球华人资产重塑合规路径</h3>
-            <p>我们立足于粤港澳大灣區核心城市深圳，長期深耕跨境商事法律與國際稅務規劃。團隊不僅具備深厚的境內外法學背景，更擁有跨國稅務師專業資歷，擅長穿透複雜的跨國法律迷霧，為企業出海與高淨值群體提供切實可行的結構化解決方案。</p>
-            <p>無論是突發的帳戶風控、重大跨境爭議解決，還是全球精品的資產架構佈局，我們始終堅持理性、嚴謹、克制的專業操守，做您全球化戰略中最堅實的法律後盾。</p>
-        </div>
-        <div>
-            <img src="alan_fullbody.jpeg" alt="Alan 律师全身形象" class="hero-img">
-        </div>
-    </div>
-</section>
-
-<section id="contact" class="contact">
-    <div class="container">
-        <h2 class="section-title">开启您的全球战略规划</h2>
-        <p>不论是面临紧急的跨境账户纠纷、银行卡冻结，还是正在筹备日本饭店与欧洲酒庄的海外投资，欢迎通过我们官方小红书渠道直接取得联系与私信咨询。</p>
-        
-        <a href="https://xhslink.com/m/7AVJsZKQfc1" target="_blank" class="xhs-box">
-            <div class="xhs-icon"><i class="fa-solid fa-book-open"></i></div>
-            <h4>小红书官方号</h4>
-            <p>小红书号：702834846</p>
-            <div class="xhs-btn-text">点击前往关注 / 私信法律咨询 <i class="fa-solid fa-arrow-right"></i></div>
-        </a>
-    </div>
-</section>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 Alan 律师团队. All Rights Reserved. <br>专注跨境合规、全球资产投资与风险控制。基于 GitHub 静态多页面架构优化.</p>
-            
-            <script async src="//busuanzi.ibosshuan.com/browser/js/busuanzi.pure.mini.js"></script>
-            <span id="busuanzi_container_site_uv" style="color:#7F7F7F; font-size:12px; margin-top: 10px; display: block;">访客数：<span id="busuanzi_value_site_uv"></span>人</span>
-            
-        </div>
-    </footer>
-
-
-</body>
-</html>
+  <header class="top"><div class="wrap nav"><a class="brand" href="index.html">ALAN 律师<small>LEGAL · TAX · CROSS-BORDER</small></a><nav class="links"><a href="#services">专业服务</a><a href="#about">关于 Alan</a><a href="insights.html">洞察</a><a class="nav-contact" href="#contact">预约咨询</a></nav></div></header>
+  <main>
+    <section class="hero"><div class="wrap hero-grid"><div><div class="eyebrow">Independent legal counsel</div><h1>让跨境决策，<br>有<span><em>更笃定</em></span>的法律底气。</h1><p>专注涉外法律与税务双重合规，为高净值人士与企业提供跨境风险控制、海外投资及资产保护的专业支持。</p><a class="button" href="#contact">开始一对一咨询 <b>→</b></a></div><div class="hero-image"><img src="alan_portrait.jpeg" alt="Alan 律师"></div></div></section>
+    <div class="focus"><div class="wrap focus-grid"><div><strong>涉外法律</strong><span>跨境纠纷与风险控制</span></div><div><strong>税务合规</strong><span>全球税务与资产安排</span></div><div><strong>海外投资</strong><span>项目收购与尽职调查</span></div></div></div>
+    <section class="services" id="services"><div class="wrap"><div class="heading"><div class="eyebrow">What we do</div><h2>复杂问题，交给具有国际视野的专业判断。</h2></div><div class="service-list"><article class="service"><div class="service-no">01</div><h3>银行卡冻结与跨境纠纷</h3><p>协助分析账户冻结、跨境资金往来与相关法律风险，建立清晰可行的应对路径。</p></article><article class="service"><div class="service-no">02</div><h3>日本酒店与不动产投资</h3><p>从交易结构、法律尽调到投后合规，为日本酒店及不动产投资提供全流程支持。</p></article><article class="service"><div class="service-no">03</div><h3>法国酒庄与海外收购</h3><p>结合当地法律、税务与商业安排，支持境外优质资产的收购、持有与管理。</p></article><article class="service"><div class="service-no">04</div><h3>全球资产配置与合规</h3><p>针对跨境身份、投资与财富传承的交汇问题，提供审慎且注重长期性的法律建议。</p></article></div></div></section>
+    <section class="profile" id="about"><div class="wrap profile-grid"><div class="portrait"><img src="alan_fullbody.jpeg" alt="Alan 律师全身照"></div><div><div class="eyebrow">About Alan</div><h2>不只解决眼前争议，<br>更为长期秩序预作安排。</h2><p>Alan 律师专注于涉外法律、税务合规及跨境资产相关事务。面对跨法域、多方参与且时间敏感的议题，坚持以事实为基础、以风险为边界，为当事人提供清晰、审慎的判断。</p><p>每一次沟通，都从理解您的目标与现实限制开始；每一份建议，都力求能被真正执行。</p><div class="credentials"><div><strong>APPROACH</strong>专业、克制、以结果为导向</div><div><strong>FOCUS</strong>跨境法律、税务与投资合规</div></div></div></div></section>
+    <section class="approach"><div class="wrap approach-grid"><div><div class="eyebrow">How we work</div><h2 class="heading" style="margin:12px 0 0;font-size:40px;line-height:1.45">法律服务，应当令人感到安心，而非更加复杂。</h2><ol class="principles"><li><strong>先厘清问题，再提出方案</strong><span>从关键事实、适用规则与时间节点建立共同认知。</span></li><li><strong>将专业语言转化为行动</strong><span>让每一个选择的风险、成本与下一步都足够清楚。</span></li><li><strong>兼顾当下与长期安排</strong><span>不只解决事件本身，也为后续持有、管理与合规留出空间。</span></li></ol></div><img src="alan_speaking.jpeg" alt="Alan 律师演讲"></div></section>
+    <section class="insight"><div class="wrap"><div class="heading"><div class="eyebrow">Perspectives</div><h2>从真实事务出发的法律洞察。</h2></div><div class="articles" id="featured-articles"></div></div></section>
+    <section class="contact" id="contact"><div class="wrap"><div class="eyebrow" style="color:#28423a">Private consultation</div><h2>从一次坦诚的沟通开始。</h2><p>如您正面对跨境法律、税务或海外投资问题，欢迎通过小红书与 Alan 律师联系，预约初步咨询。</p><a class="button" href="https://xhslink.com/m/7AVJsZKQfc1" target="_blank" rel="noopener">小红书：02834846 <b>→</b></a></div></section>
+  </main>
+  <footer class="footer"><div class="wrap"><p>© 2026 Alan 律师. All Rights Reserved.</p><p>涉外法律 · 税务合规 · 海外资产投资咨询</p></div></footer><script src="content.js"></script><script>document.getElementById('featured-articles').innerHTML=siteContent.articles.slice(0,3).map(a=>`<a class="article" href="insights.html"><small>${a.category}</small><h3>${a.title}</h3><span>查看洞察 →</span></a>`).join('')</script>
+</body></html>
